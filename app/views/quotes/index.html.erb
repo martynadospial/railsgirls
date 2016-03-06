@@ -1,0 +1,11 @@
+<%= button_to "jeszcze raz", create_quote_path %>
+
+<% @quotes.each do |quote| %>
+<div>
+  <%= link_to "show me the quote!", show_quote_path(quote) %>
+  <p> <%= quote.author %> </p>
+  <p> <%= quote.quote %> </p>
+  <p> <%= quote.category %> </p>
+  <%= button_to "Destroy!", delete_quote_path(quote), method: :delete %>
+</div>
+  <% end %>
